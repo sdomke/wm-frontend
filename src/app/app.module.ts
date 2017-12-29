@@ -6,6 +6,8 @@ import { IcehockeyComponent } from './icehockey/icehockey.component';
 import { FootballComponent } from './football/football.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
+import {Configuration} from './app.constants';
+import {DataServiceService} from './data-service.service';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [],
+  providers: [Configuration, DataServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

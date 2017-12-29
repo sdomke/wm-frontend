@@ -1,11 +1,18 @@
 <h2>
-  Willkommen zur besten Eishockey-Seite der Welt!
+  Alle Infos zur Eishockey-WM 2017!
 </h2>
 
 
-
-<ul *ngFor="let t of values">
-  <li>
-    <span>Teamname: {{t.TeamName }} | Teamkürzel: {{t.ShortName}} </span>
-  </li>
-</ul>
+<h3>Tabelle der Teams</h3>
+<table>
+  <tr>
+    <th>Teamname</th>
+    <th>Teamkürzel</th>
+    <th>Teamsymbol</th>
+  </tr>
+  <tr *ngFor="let t of values">
+    <td>{{t.TeamName}}</td>
+    <td>{{t.ShortName}}</td>
+    <td> <img src="{{t.TeamIconUrl}}"></td>
+  </tr>
+</table>
