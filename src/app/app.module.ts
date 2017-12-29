@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import { IcehockeyComponent } from './icehockey/icehockey.component';
 import { FootballComponent } from './football/football.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { FootballComponent } from './football/football.component';
     FootballComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
