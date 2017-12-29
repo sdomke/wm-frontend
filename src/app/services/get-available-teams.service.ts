@@ -4,14 +4,14 @@ import { HttpClient, HttpEvent, HttpHandler, HttpInterceptor, HttpRequest } from
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 
-import { Configuration } from './app.constants';
+import { GetAvailableTeams } from '../constants/app.constants';
 
 @Injectable()
-export class DataServiceService {
+export class GetAvailableTeamsService {
 
   private actionUrl: string;
 
-  constructor(private http: HttpClient, private _configuration: Configuration) {
+  constructor(private http: HttpClient, private _configuration: GetAvailableTeams) {
     this.actionUrl = _configuration.ServerWithApiUrl;
   }
 

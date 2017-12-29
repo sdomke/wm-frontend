@@ -3,16 +3,93 @@
 </h2>
 
 
-<h3>Tabelle der Teams</h3>
-<table>
-  <tr>
-    <th>Teamname</th>
-    <th>Teamkürzel</th>
-    <th>Teamsymbol</th>
-  </tr>
-  <tr *ngFor="let t of values">
-    <td>{{t.TeamName}}</td>
-    <td>{{t.ShortName}}</td>
-    <td> <img src="{{t.TeamIconUrl}}"></td>
-  </tr>
-</table>
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <h3>Teilnehmende Teams</h3>
+      <table>
+        <tr>
+          <th>Teamname</th>
+          <th>Teamkürzel</th>
+          <th>Teamsymbol</th>
+        </tr>
+        <tr *ngFor="let team of availableTeams">
+          <td>{{team.TeamName}}</td>
+          <td>{{team.ShortName}}</td>
+          <td> <img src="{{team.TeamIconUrl}}"></td>
+        </tr>
+      </table>
+    </div>
+    <div class="col-sm-6">
+      <h3>Spielplan</h3>
+      <h4>Viertelfinale</h4>
+      <table>
+        <tr>
+          <th>Spielbeginn</th>
+          <th>Spielstätte</th>
+          <th>Heim</th>
+          <th>Auswärts</th>
+          <th>Ergebnis</th>
+        </tr>
+        <tr *ngFor="let match of matchDataQuaterFinals">
+          <td>{{match.MatchDateTime}}</td>
+          <td>{{match.Location.LocationCity}} {{match.Location.LocationStadium}}</td>
+          <td>{{match.Team1.TeamName}} <img src="{{match.Team1.TeamIconUrl}}"></td>
+          <td>{{match.Team2.TeamName}} <img src="{{match.Team2.TeamIconUrl}}"></td>
+          <td>{{match.MatchResults[0].PointsTeam1}}:{{match.MatchResults[0].PointsTeam2}}</td>
+        </tr>
+      </table>
+      <h4>Halbfinale</h4>
+      <table>
+        <tr>
+          <th>Spielbeginn</th>
+          <th>Spielstätte</th>
+          <th>Heim</th>
+          <th>Auswärts</th>
+          <th>Ergebnis</th>
+        </tr>
+        <tr *ngFor="let match of matchDataSemiFinal">
+          <td>{{match.MatchDateTime}}</td>
+          <td>{{match.Location.LocationCity}} {{match.Location.LocationStadium}}</td>
+          <td>{{match.Team1.TeamName}} <img src="{{match.Team1.TeamIconUrl}}"></td>
+          <td>{{match.Team2.TeamName}} <img src="{{match.Team2.TeamIconUrl}}"></td>
+          <td>{{match.MatchResults[0].PointsTeam1}}:{{match.MatchResults[0].PointsTeam2}}</td>
+        </tr>
+      </table>
+      <h4>Spiel um Platz 3</h4>
+      <table>
+        <tr>
+          <th>Spielbeginn</th>
+          <th>Spielstätte</th>
+          <th>Heim</th>
+          <th>Auswärts</th>
+          <th>Ergebnis</th>
+        </tr>
+        <tr>
+          <td>{{matchDataFinal[0].MatchDateTime}}</td>
+          <td>{{matchDataFinal[0].Location.LocationCity}} {{matchDataFinal[0].Location.LocationStadium}}</td>
+          <td>{{matchDataFinal[0].Team1.TeamName}} <img src="{{matchDataFinal[0].Team1.TeamIconUrl}}"></td>
+          <td>{{matchDataFinal[0].Team2.TeamName}} <img src="{{matchDataFinal[0].Team2.TeamIconUrl}}"></td>
+          <td>{{matchDataFinal[0].MatchResults[0].PointsTeam1}}:{{matchDataFinal[0].MatchResults[0].PointsTeam2}}</td>
+        </tr>
+      </table>
+      <h4>Finale</h4>
+      <table>
+        <tr>
+          <th>Spielbeginn</th>
+          <th>Spielstätte</th>
+          <th>Heim</th>
+          <th>Auswärts</th>
+          <th>Ergebnis</th>
+        </tr>
+        <tr>
+          <td>{{matchDataFinal[1].MatchDateTime}}</td>
+          <td>{{matchDataFinal[1].Location.LocationCity}} {{matchDataFinal[1].Location.LocationStadium}}</td>
+          <td>{{matchDataFinal[1].Team1.TeamName}} <img src="{{matchDataFinal[1].Team1.TeamIconUrl}}"></td>
+          <td>{{matchDataFinal[1].Team2.TeamName}} <img src="{{matchDataFinal[1].Team2.TeamIconUrl}}"></td>
+          <td>{{matchDataFinal[1].MatchResults[0].PointsTeam1}}:{{matchDataFinal[1].MatchResults[0].PointsTeam2}}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

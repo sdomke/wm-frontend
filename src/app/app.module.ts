@@ -6,8 +6,11 @@ import { IcehockeyComponent } from './icehockey/icehockey.component';
 import { FootballComponent } from './football/football.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HttpClientModule } from '@angular/common/http';
-import {Configuration} from './app.constants';
-import {DataServiceService} from './data-service.service';
+import {GetAvailableTeams, GetMatchDataFinal, GetMatchDataQuaterFinals, GetMatchDataSemiFinal} from './constants/app.constants';
+import {GetAvailableTeamsService} from './services/get-available-teams.service';
+import {GetMatchDataQuaterFinalsService} from './services/get-match-data-quater-finals.service';
+import {GetMatchDataSemiFinalService} from './services/get-match-data-semi-final.service';
+import {GetMatchDataFinalService} from './services/get-match-data-final.service';
 
 @NgModule({
   declarations: [
@@ -20,7 +23,16 @@ import {DataServiceService} from './data-service.service';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [Configuration, DataServiceService],
+  providers: [
+    GetAvailableTeams,
+    GetMatchDataQuaterFinals,
+    GetMatchDataSemiFinal,
+    GetMatchDataFinal,
+    GetAvailableTeamsService,
+    GetMatchDataQuaterFinalsService,
+    GetMatchDataSemiFinalService,
+    GetMatchDataFinalService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
