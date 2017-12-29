@@ -12,7 +12,7 @@ export class DataServiceService {
   private actionUrl: string;
 
   constructor(private http: HttpClient, private _configuration: Configuration) {
-    this.actionUrl = _configuration.ServerWithApiUrl + 'values/';
+    this.actionUrl = _configuration.ServerWithApiUrl;
   }
 
   public getAll<T>(): Observable<T> {
