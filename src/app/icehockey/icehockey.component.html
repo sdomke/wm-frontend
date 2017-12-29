@@ -1,3 +1,9 @@
-<p>
-  icehockey works!
-</p>
+<h1>
+  Willkommen zur besten Eishockey-Seite der Welt!
+</h1>
+
+<ul *ngFor="let t of values">
+  <li>
+    <span>Teamname: {{t.TeamName }} | Teamkürzel: {{t.ShortName}} </span>
+  </li>
+</ul>
